@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/shafin2/ReactJS/static/css/main.80c640ad.css",
+    "main.js": "/shafin2/ReactJS/static/js/main.af608ec5.js",
+    "index.html": "/shafin2/ReactJS/index.html",
+    "main.80c640ad.css.map": "/shafin2/ReactJS/static/css/main.80c640ad.css.map",
+    "main.af608ec5.js.map": "/shafin2/ReactJS/static/js/main.af608ec5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.80c640ad.css",
+    "static/js/main.af608ec5.js"
+  ]
+}
