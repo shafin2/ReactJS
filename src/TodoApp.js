@@ -13,6 +13,10 @@ class App extends React.Component{
         };
     }
     removeElement(i){
+        let ls=document.getElementsByClassName("allTasks")
+        if(this.state.tasks.checkIndexes[i+1]){
+            ls[i].classList.add("checked");
+        }
         console.log("Clcike")
         let mylist1=this.state.tasks.list.slice();
         console.log(mylist1)
@@ -30,22 +34,34 @@ class App extends React.Component{
     newElement(){
         let a=document.getElementById("myInput").value;
         if(a!=""){
-            let mylist=this.state.tasks.list.slice();
+            let norepeat=true;
+            for(let i=0;i<this.state.tasks.list.length;i++){
+                if(this.state.tasks.list[i]===a){
+                    norepeat=false;
+                }
+            }
+            if(norepeat){
+                let mylist=this.state.tasks.list.slice();
                 mylist.push(a);
-            let check=this.state.tasks.checkIndexes.slice();
+                let check=this.state.tasks.checkIndexes.slice();
                 check.push(false);
                 this.setState({
                     tasks:{
                         list:mylist,
                         checkIndexes:check,
                     },
-                }
-            );
+                });
+            }
+            else{
+                alert("Task already exist!");
+            }
+            
         }
         
     }
     taskClick(i){
-        this.state.tasks.checkIndexes[i]=this.state.tasks.checkIndexes[i]?false:true;
+        this.state.tasks.checkIndexes[i]=this.state.tasks.checkIndexes[i
+        ]?false:true;
         let ls=document.getElementsByClassName("allTasks")
         if(this.state.tasks.checkIndexes[i]){
             ls[i].classList.add("checked");
@@ -55,7 +71,6 @@ class App extends React.Component{
         }
     }
     render(){
-        
         return (
             <>
             <div className="container">
